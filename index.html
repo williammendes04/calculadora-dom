@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-content">
+        <h1>Calculadora Completa</h1>
+        
+        <div class="input-group">
+            <label>Número 1:</label>
+            <input type="text" id="n1" 
+                   onclick="mostrarTooltip(this)" 
+                   oninput="validarNumero(this)" 
+                   class="glass-input">
+            <div class="input-tooltip">Por favor, insira apenas números</div>
+        </div>
+        
+        <div class="operators">
+            <button class="operator-btn" onclick="setOperator('+')">+</button>
+            <button class="operator-btn" onclick="setOperator('-')">-</button>
+            <button class="operator-btn" onclick="setOperator('*')">×</button>
+            <button class="operator-btn" onclick="setOperator('/')">÷</button>
+            <button class="operator-btn" onclick="setOperator('**')">^</button>
+            <button class="operator-btn" onclick="setOperator('%')">%</button>
+        </div>
+        
+        <div class="input-group">
+            <label>Número 2:</label>
+            <input type="text" id="n2" 
+                   onclick="mostrarTooltip(this)" 
+                   oninput="validarNumero(this)" 
+                   class="glass-input">
+            <div class="input-tooltip">Por favor, insira apenas números</div>
+        </div>
+        
+        <div class="input-group">
+            <label>Resultado:</label>
+            <input type="text" id="resultado" readonly class="glass-input">
+        </div>
+        
+        <div class="action-buttons">
+            <button class="calculate-btn" onclick="calcular()">CALCULAR</button>
+            <button class="clear-btn" onclick="limpar()">LIMPAR</button>
+        </div>
+    </div>
+
+    <div class="project-accordion">
+        <button class="accordion-btn" onclick="toggleAccordion()">
+            Sobre este projeto ▼
+        </button>
+        <div class="project-description">
+            <h2>Projeto: Calculadora com DOM Manipulation</h2>
+            <h3>por William Mendes, Designer Multimídia e Dev em Formação</h3>
+            
+            <p>Desenvolvi esta calculadora dinâmica aplicando manipulação avançada do DOM para criar uma interface responsiva que:</p>
+            
+            <ul>
+                <li>Captura inputs do usuário com <code>getElementById()</code></li>
+                <li>Processa operações matemáticas complexas via JavaScript</li>
+                <li>Exibe resultados em tempo real</li>
+                <li>Implementa tratamento de erros</li>
+            </ul>
+            
+            <h4>Expertise Aplicada:</h4>
+            <ul>
+                <li>Princípios de UX/UI</li>
+                <li>Técnicas de Front-end moderno</li>
+                <li>Boas práticas de desenvolvimento</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="history-container">
+        <h3>Histórico de Cálculos</h3>
+        <ul id="history-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
