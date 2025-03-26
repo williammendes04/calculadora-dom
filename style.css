@@ -294,25 +294,60 @@
     75% { transform: translateX(5px); }
   }
   
-  /* Responsividade */
-  @media (max-width: 480px) {
+  /* ========================================= */
+  /* AJUSTES ESPECÍFICOS PARA MOBILE (NOVOS) */
+  /* ========================================= */
+  
+  @media (max-width: 600px) {
+    /* Corrige o layout dos operadores */
+    .operators {
+      gap: 8px;
+      margin: 15px 0;
+    }
+  
+    /* Ajusta o botão de porcentagem */
+    .operator-btn:nth-last-child(2) {
+      order: 1; /* Move a porcentagem para junto dos outros operadores */
+    }
+  
+    /* Ajusta o accordion */
+    .project-accordion {
+      margin: 15px auto;
+      width: 95%;
+    }
+  
+    /* Ajusta os inputs */
+    .glass-input {
+      padding: 10px 5px;
+      font-size: 1rem;
+    }
+  
+    /* Ajusta o histórico */
+    .history-container {
+      width: 95%;
+      padding: 10px;
+    }
+  }
+  
+  /* Ajustes extra para telas muito pequenas (iPhone SE etc) */
+  @media (max-width: 375px) {
+    .operator-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+    
     .action-buttons {
       flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
     
     button {
       width: 100%;
-      max-width: 200px;
     }
     
-    .glass-input {
-      font-size: 1rem;
-    }
-    
-    .input-tooltip {
-      font-size: 0.7rem;
-      bottom: -18px;
+    .project-accordion, 
+    .history-container {
+      width: 90%;
     }
   }
